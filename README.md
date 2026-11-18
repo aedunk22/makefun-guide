@@ -4,20 +4,20 @@
 
 # Your first make.fun bounty
 
-make.fun runs competitions called bounties. Each one sets a task, a deadline, scoring rules, and prizes. You steer an AI coding agent that builds the entry, then submit the work and the session logs that show how it was made.
+make.fun bounties are competitions with tasks, deadlines, scoring rules, and prizes. Steer an AI coding agent to build your entry and submit it with session logs.
 
 ## Sign in and get the kit
 
-Open [make.fun through this guide's referral link](https://make.fun/r/szthsggd) and choose **Sign in**. GitHub is a convenient choice for a repository entry. If you use Google, Apple, Discord, or a Solana wallet instead, link GitHub from your profile. Set up a Solana wallet for payouts.
+**Sign in** via the [referral link](https://make.fun/r/gyhtrkjc). Use GitHub for repository entries. Google, Apple, Discord, or Solana wallet users should link GitHub from their profile. Set up a Solana payout wallet.
 
-Find an open bounty and download its kit from the entry form. For this guide's bounty, you can also download it from the terminal:
+Download an open bounty's kit from its entry form. This guide's bounty also offers a terminal download:
 
 ```sh
 curl -fsSL https://make.fun/c/bring-the-humans-02/kit | tar xz
 cd bring-the-humans-02-kit
 ```
 
-Read `RULES.txt` for the entry requirements, scoring, and deadlines. Use Node.js 22 to run the kit's CLI. To pair it with your account, run the command below, open the link it prints while signed in, and approve the matching code.
+Read `RULES.txt` for requirements, scoring, and deadlines. Use Node.js 22 for the kit's CLI. Pair your account: run this command, open its printed link while signed in, and approve the matching code.
 
 ```sh
 node cli/makefun.mjs login --origin https://make.fun
@@ -25,32 +25,32 @@ node cli/makefun.mjs login --origin https://make.fun
 
 ## Build and submit
 
-Start a fresh session in your public repository after the bounty opens. Use a coding agent that records its sessions, such as Codex or Claude Code. Give it the kit rules and ask it to write the entry in the repo. Review the draft and ask for a revision in the same session so the log shows both edits.
+After the bounty opens, start a fresh session in your public repository with a session-recording coding agent, such as Codex or Claude Code. Give it the kit rules and request an entry in the repo. Review and request a revision within that session to log both edits.
 
-For Bring the Humans Again, publish the guide as the root `README.md` with the three live badges and your own referral code. Once GitHub shows the guide, capture that page and add it at the root as `screenshot.png`. Set the repository's About website to the bounty page and add the `makefun` topic.
+For Bring the Humans Again, publish the root `README.md` guide with three live badges and your own referral code. Capture the published GitHub page as root `screenshot.png`. Set the repo's About website to the bounty page; add the `makefun` topic.
 
-Push your work and run `git rev-parse HEAD` in the repo to get the commit SHA. From the kit directory, assuming your repository is next to it and named `my-entry`, run:
+Push your work and run `git rev-parse HEAD` in the repo for its commit SHA. From the kit directory, with an adjacent repo named `my-entry`, run:
 
 ```sh
 node cli/makefun.mjs bundle --repo ../my-entry --out transcripts.tar.gz
 node cli/makefun.mjs check --kit . --repo ../my-entry --transcripts transcripts.tar.gz
 ```
 
-If bundling reports missing run details, supply them as directed by the CLI and `RULES.txt` before uploading. In the bounty's **Enter** form, provide the public GitHub URL and commit SHA, upload the bundle, and sign with your linked Solana wallet when prompted. Use `node cli/makefun.mjs status` to check progress. If checks reject the entry, fix the listed issues and resubmit before the deadline. A later push alone doesn't update the submitted snapshot.
+Before uploading, supply missing run details reported by bundling as directed by the CLI and `RULES.txt`. In the bounty's **Enter** form, provide the public GitHub URL and commit SHA, upload the bundle, and sign with your linked Solana wallet when prompted. Check progress: `node cli/makefun.mjs status`. Fix rejected entries' listed issues and resubmit before the deadline. Later pushes alone don't update submitted snapshots.
 
 ## Scores and payouts
 
-Your entry must pass the submission checks before it can be ranked. Each bounty publishes its scoring rules. In [Bring the Humans Again](https://make.fun/bounty/bring-the-humans-02), the score counts new signups credited to your link during the contest that pass verification. For example, ten signups with six verified count as six points. Ties go to the earlier final submission, and the rules allocate a $1,000 prize pool across 50 places.
+Ranking requires passing submission checks. Each bounty publishes scoring rules. [Bring the Humans Again](https://make.fun/bounty/bring-the-humans-02) counts verified new signups credited to your link during the contest: ten signups, six verified, earn six points. Earlier final submissions win ties; rules allocate $1,000 across 50 places.
 
-Prizes pay in **USDC on Solana**. When a bounty prize is ready, open your profile to claim it. For this bounty, the prize goes to the payout wallet that signed the winning entry.
+Claim ready bounty prizes from your profile in **USDC on Solana**. This bounty pays the wallet that signed the winning entry.
 
-Participation rewards come from a separate pool. By default, the top 1,000 scored entries among those that didn't win a prize can earn a share based on their place. Approved participation, referral, and quest rewards add up across contests. You can claim that combined balance in USDC on Solana once it reaches the claim minimum of **$0.25 USD**; run `node cli/makefun.mjs rewards` to confirm your balance and the live minimum, which can change.
+Participation rewards use a separate pool. By default, the top 1,000 scored entries that didn't win a prize can earn shares based on place. Approved participation, referral, and quest rewards accumulate across contests; claim the combined balance in USDC on Solana at the **$0.25 USD** minimum. Run `node cli/makefun.mjs rewards` to confirm your balance and the live minimum, which can change.
 
 ## Practical tips
 
-- Pick a bounty whose scoring rules you can explain in one sentence before you start building.
-- Use the kit's local grader when the rules provide one.
-- Open your repo in a signed-out browser window to check that visitors can see the README and its badges before taking the screenshot.
-- Run the kit's checks early enough to fix problems before the deadline.
+- Before building, pick a bounty whose scoring rules you can explain in one sentence.
+- Use the kit's local grader when provided by the rules.
+- Before screenshotting, check README and badge visibility in a signed-out browser window.
+- Run kit checks early enough to fix problems before the deadline.
 
-If you're ready to try a bounty, [start here with this guide's referral link](https://make.fun/r/szthsggd).
+Ready? [Try a bounty through this guide's referral link](https://make.fun/r/gyhtrkjc).
