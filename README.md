@@ -29,7 +29,7 @@ node cli/makefun.mjs --help
 node cli/makefun.mjs login --origin https://make.fun
 ```
 
-While signed in, open `login`'s approval link, check the code and approve. Retry if it stops waiting. The CLI now submits under your account. Without an explicit keypair, login creates `~/.makefun/keypairs/https_make.fun.json` to sign entries and claims. Keep it private.
+While signed in, open `login`'s approval link, check the code and approve. Retry if it stops waiting. The CLI submits under your account. Without an explicit keypair, login creates `~/.makefun/keypairs/https_make.fun.json` to sign entries and claims. Keep it private.
 
 Read `RULES.txt` before using the starter: it specifies submission files and local grading availability. This kit has no runnable scorer; use its pre-submit checks.
 
@@ -104,6 +104,7 @@ Replace both placeholders, answering US-person status truthfully. The signing wa
 1. **Choose for fit.** Match the task to what your agent can build, and give it a time budget before starting.
 2. **Preserve real records.** Use a client that records sessions from the start; do not reconstruct transcripts or token usage afterward.
 3. **Check before spending submissions.** Bundle and run the pre-submit checks before entering; rejected entries still consume submission limits.
+   - Run the kit's `check` command on your entry before submitting.
 4. **Invite people who will participate.** Share the guide with real newcomers and explain the first task. Raw visits and unverified signups do not win this bounty.
 
 ## Continue from here
